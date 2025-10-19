@@ -34,9 +34,10 @@ function displayProducts(products) {
     products.slice(0,5).forEach((p) => {
         const {name, price, image} = p.fields;
         const card = document.createElement("div");
+        const imageUrl = Array.isArray(image) ? image[0].url:image;
         card.className = "product-card";
         card.innerHTML = `
-        <img class= "product-image" src="${image}" alt="${name}">
+        <img class= "product-image" src="${imageUrl}" alt="${name}">
         <div class= "product-name">${name}</div>
         <div class="product-price">$${(price/100).toFixed(2)}</div>
         `;
