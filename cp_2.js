@@ -29,7 +29,6 @@ async function fetchProductsAsync() {
 
 // Write displayProducts(products)
 
-
 function displayProducts(products) {
     container.innerHTML="";
     products.slice(0,5).forEach((p) => {
@@ -45,8 +44,13 @@ function displayProducts(products) {
     });
 }
 
-// Reusable Error function
+// Reusable handleError function
 
 function handleError(error) {
     console.error(`An error Occured: ${error.message}`);
 }
+
+//Calling Functions
+
+fetchProductsThen();
+fetchProductsAsync();
